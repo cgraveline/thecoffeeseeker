@@ -4,21 +4,46 @@ import styles from '../styles/Home.module.css'
 import Link from 'next/link'
 import { FC } from 'react'
 import { Card } from '../components/Card'
-import { CoffeeShop } from '../types'
+import { CoffeeShop, CoffeeShops } from '../types'
+import { GetServerSideProps } from 'next'
+import { GraphQLClient, gql } from 'graphql-request'
 
-export const Home: FC = () => {
-  const [coffeeShops, setCoffeeShops] = useState<CoffeeShop[]>([])
+export const getServerSideProps: GetServerSideProps = async () => {
+  const endpoint =
+    'https://api-us-east-1.hygraph.com/v2/clcjt8ric0ogl01ughxd0esvh/master'
 
-  useEffect(() => {
-    async function fetchData() {
-      const response = await fetch('/api/shops')
-      const data = await response.json()
-      setCoffeeShops(data.coffeeShops)
+  const QUERY = gql`
+    {
+      coffeeShops {
+        title
+        website
+        directions
+        address
+      }
     }
+  `
 
-    fetchData()
-  }, [])
+  try {
+    const client = new GraphQLClient(endpoint)
+    const { coffeeShops } = await client.request<CoffeeShops>(QUERY)
 
+    return {
+      props: {
+        coffeeShops,
+      },
+    }
+  } catch (error) {
+    console.error('Error retrieving data from the API:', error)
+    return {
+      props: {
+        coffeeShops: [],
+      },
+    }
+  }
+}
+
+export const Home: FC<{ coffeeShops: CoffeeShop[] }> = ({ coffeeShops }) => {
+  console.log('CoffeeShop Data: ', coffeeShops)
   return (
     <>
       <Head>

@@ -17,14 +17,26 @@
   text-align: center;
 }
 
+@media (max-width: 500px) {
+  .intro {
+    font-size: 2rem;
+  }
+}
+
 .cardWrap {
   max-width: 60vw;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   margin: auto;
-  padding: calc(var(--spacing-default) * 4) calc(var(--spacing-default) * 4);
+  padding: 4rem;
   list-style: none;
+}
+
+@media (max-width: 500px) {
+  .cardWrap {
+    padding: 2rem 0;
+  }
 }
 
 .shop {
