@@ -5,10 +5,10 @@ import Link from 'next/link'
 import { FC } from 'react'
 import { Card } from '../components/Card'
 import { CoffeeShop, CoffeeShops } from '../types'
-import { GetServerSideProps } from 'next'
+import { GetStaticProps } from 'next'
 import { GraphQLClient, gql } from 'graphql-request'
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const endpoint =
     'https://api-us-east-1.hygraph.com/v2/clcjt8ric0ogl01ughxd0esvh/master'
 
