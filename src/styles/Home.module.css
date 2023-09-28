@@ -30,15 +30,26 @@
 .shop {
   display: flex;
   flex-direction: column;
+  align-items: center;
   position: relative;
   height: 100%;
+  padding: 1rem;
+}
+
+.shopTitle {
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+.shopAddress {
+  margin: var(--spacing-default);
 }
 
 .shopLinks {
   text-align: center;
   width: 100%;
   position: absolute;
-  bottom: 0;
+  bottom: var(--spacing-default);
 }
 
 .website,

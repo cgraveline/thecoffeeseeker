@@ -47,8 +47,8 @@ export const Home: FC = () => {
             <li key={shop.title}>
               <Card>
                 <div className={styles.shop}>
-                  <h3>{shop.title}</h3>
-                  <span>{shop.address}</span>
+                  <h3 className={styles.shopTitle}>{shop.title}</h3>
+                  <span className={styles.shopAddress}>{shop.address}</span>
                   <div className={styles.shopLinks}>
                     <Link className={styles.website} href={shop.website}>
                       Website
