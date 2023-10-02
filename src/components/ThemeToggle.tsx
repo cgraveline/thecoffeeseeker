@@ -2,9 +2,7 @@ import { FC, useContext } from 'react'
 import style from '../styles/ThemeToggle.module.scss'
 import { ThemeContext } from './ThemeContext'
 
-interface ThemeToggleProps {}
-
-export const ThemeToggle = (FC<ThemeToggleProps> = () => {
+export const ThemeToggle: FC = () => {
   const { theme, toggleTheme } = useContext(ThemeContext)
 
   return (
@@ -15,4 +13,4 @@ export const ThemeToggle = (FC<ThemeToggleProps> = () => {
       </span>
     </label>
   )
-})
+}
