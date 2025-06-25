@@ -13,6 +13,16 @@ const QUERY = gql`
       website
       directions
       address
+      latitude
+      longitude
+      state
+      city
+      description {
+        raw
+      }
+      rating
+      priceRange
+      specialties
     }
   }
 `

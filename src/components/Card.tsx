@@ -1,6 +1,22 @@
 import { FC, PropsWithChildren } from 'react'
 import style from '../styles/Card.module.scss'
 
-export const Card: FC<PropsWithChildren> = ({ children }) => {
-  return <div className={style.card}>{children}</div>
+interface CardProps extends PropsWithChildren {
+  isSelected?: boolean
+  onClick?: () => void
+}
+
+export const Card: FC<CardProps> = ({
+  children,
+  isSelected = false,
+  onClick,
+}) => {
+  return (
+    <div
+      className={`${style.card} ${isSelected ? style.selected : ''}`}
+      onClick={onClick}
+    >
+      {children}
+    </div>
+  )
 }

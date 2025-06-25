@@ -1,11 +1,23 @@
 .card {
-  width: 22rem;
-  height: 15rem;
   background-color: var(--card-bg);
   border: var(--card-border);
-  border-radius: 0.5rem;
+  border-radius: 12px;
+  padding: 1.5rem;
   margin: 1rem;
-  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  &.selected {
+    border-color: var(--link-color);
+    box-shadow: 0 0 0 3px rgba(83, 134, 228, 0.2);
+    transform: translateY(-2px);
+  }
 }
 
 @media (max-width: 500px) {

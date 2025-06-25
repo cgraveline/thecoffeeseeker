@@ -1,0 +1,230 @@
+.main {
+  padding: 5% 10%;
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--body-bg);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--header-bg);
+  border-bottom: 3px solid var(--display-text);
+
+  .logoText {
+    margin-right: 0.75rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .logoText {
+    display: none;
+  }
+}
+
+.introSection {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.intro {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--text-secondary, #666);
+  margin: 0;
+}
+
+@media (max-width: 500px) {
+  .intro {
+    font-size: 1.875rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+}
+
+.viewToggle {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.toggleButton {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--accent);
+  background-color: var(--body-bg);
+  color: var(--display-text);
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: var(--accent);
+  }
+
+  &.active {
+    background-color: var(--link-color);
+    color: white;
+    border-color: var(--link-color);
+  }
+}
+
+.mapSection {
+  margin: 2rem 0;
+}
+
+.resultsSection {
+  margin: 2rem 0;
+}
+
+.resultsHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+
+  h3 {
+    font-size: 1.5rem;
+    color: var(--display-text);
+  }
+}
+
+.cardWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardList {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.shop {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  height: 100%;
+  padding: 1rem;
+}
+
+.shopTitle {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+  color: var(--display-text);
+}
+
+.shopAddress {
+  margin: 0.5rem 0;
+  font-weight: 300;
+  color: var(--text-secondary, #666);
+}
+
+.shopDescription {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--default-text);
+}
+
+.shopMeta {
+  display: flex;
+  gap: 1rem;
+  margin: 0.5rem 0;
+  flex-wrap: wrap;
+}
+
+.rating,
+.priceRange {
+  font-size: 0.875rem;
+  color: var(--display-text);
+  background-color: var(--accent);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.specialties {
+  margin: 0.5rem 0;
+  width: 100%;
+}
+
+.specialtiesLabel {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--display-text);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.specialtiesList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.specialty {
+  font-size: 0.75rem;
+  background-color: var(--accent-alt);
+  color: var(--display-text);
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+}
+
+.shopLinks {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  margin-top: auto;
+  gap: 1rem;
+}
+
+.website,
+.directions {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  background-color: var(--link-color);
+  color: #e5ebf7;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: darken(#5386e4, 10%);
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 5%;
+  }
+
+  .cardList {
+    grid-template-columns: 1fr;
+  }
+
+  .shopLinks {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .website,
+  .directions {
+    width: 100%;
+  }
+}

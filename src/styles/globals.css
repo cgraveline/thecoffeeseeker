@@ -7,24 +7,23 @@
   --font-serif: 'Lora', serif;
   --font-mono: 'Noto Sans Mono', monospace;
 
-  --body-bg: #eb7554;
-  --header-bg: #fc7753;
-  --default-text: #333;
+  --header-bg: #f5f4c9;
+  --body-bg: #f5f4c9;
+  --accent: #dcc9f5;
+  --accent-alt: #a8a879;
+  --default-text: #ffffeb;
+  --display-text: #36352c;
   --link-color: #5386e4;
 
-  --card-bg: #f2efea;
+  --card-bg: var(--accent-alt);
   --card-border: 1px solid #ece9e4;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --body-bg: #1b1725;
-    --header-bg: #332c46;
-    --default-text: #f2efea;
-
-    --card-bg: #020106;
-    --card-border: 1px solid #020106;
-  }
+[data-theme='dark'] {
+  --body-bg: black;
+  --text-primary: white;
+  --text-secondary: grey;
+  --accent: var(--accent-alt);
 }
 
 * {
@@ -53,6 +52,7 @@ h2,
 h3,
 h4,
 h5 {
+  color: var(--display-text);
   font-family: var(--font-serif);
   font-weight: 600;
 }
